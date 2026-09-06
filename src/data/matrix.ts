@@ -38,13 +38,13 @@ export const CAPABILITY_MATRIX_DATA: Record<string, FrameworkMatrix> = {
   },
   react: {
     dbTargets: { local: "supported", docker: "supported", supabase: "supported", neon: "supported" },
-    authTargets: { local: "experimental", supabase: "supported", clerk: "supported" },
+    authTargets: { local: "supported", supabase: "supported", clerk: "supported" },
     cachingTargets: { none: "supported", docker: "unsupported", upstash: "unsupported" },
     dockerfile: false,
   },
   vue: {
     dbTargets: { local: "supported", docker: "supported", supabase: "supported", neon: "supported" },
-    authTargets: { local: "experimental", supabase: "supported", clerk: "supported" },
+    authTargets: { local: "supported", supabase: "supported", clerk: "supported" },
     cachingTargets: { none: "supported", docker: "unsupported", upstash: "unsupported" },
     dockerfile: false,
   },
@@ -70,10 +70,11 @@ export const CAPABILITY_MATRIX_DATA: Record<string, FrameworkMatrix> = {
     frontends: ["react", "vue"],
   },
   laravel: {
-    dbTargets: { local: "experimental", docker: "experimental", supabase: "experimental", neon: "unsupported" },
-    authTargets: { local: "experimental", supabase: "unsupported", clerk: "unsupported" },
-    cachingTargets: { none: "experimental", docker: "experimental", upstash: "experimental" },
+    dbTargets: { local: "supported", docker: "supported", supabase: "supported", neon: "unsupported" },
+    authTargets: { local: "supported", supabase: "unsupported", clerk: "unsupported" },
+    cachingTargets: { none: "supported", docker: "supported", upstash: "supported" },
     dockerfile: false,
+    frontends: ["react", "vue"],
   },
 };
 
