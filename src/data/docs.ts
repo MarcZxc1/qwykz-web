@@ -145,17 +145,17 @@ Qwykz provides a dedicated hands-on learning mode via \`--learn\`:
 
 Qwykz enforces **Honest Capability Gating** via \`capability-matrix.json\`:
 
-- **Supported**: Fully tested end-to-end with runtime verification.
-- **Experimental**: Functional under certain conditions, requires explicit \`--experimental\` flag.
+- **Supported**: Fully tested end-to-end with deterministic in-memory planning and runtime verification.
 - **Unsupported**: Blocked at validation time before any files are created on disk.
 
 For example:
-- Standalone React/Vue SPAs cannot use local JWT auth because there is no backend server to issue tokens; Qwykz guides you to Supabase or Clerk instead.
-- Rust and Go Fiber backends support local JWT and Docker Redis, but reject unsupported client-side providers until verified plugins exist.`,
+- Rust, Go Fiber, and Python FastAPI backends support local JWT and Redis caching, but reject unsupported client-side JS providers (like Clerk or Supabase Auth) before writing.
+- Standalone React and Vue SPAs support local token storage, Supabase Auth, and Clerk Auth, but reject backend-only concerns like Docker Redis caching.
+- All 10 supported frameworks and 17 presets are fully graduated to standard supported status.`,
     codeSnippet: {
       language: "bash",
       caption: "Capability validation behavior",
-      code: "# Normal execution fails fast if combination is unsupported\nbunx qwykz@latest --framework react --auth local # Fails before write\n\n# Experimental combinations require explicit permission\nbunx qwykz@latest --framework laravel --experimental",
+      code: "# Supported combinations scaffold directly without experimental flags\nbunx qwykz@latest --framework react --auth local --yes\nbunx qwykz@latest --preset api-laravel --yes\n\n# Invalid or incompatible combinations fail fast before touching disk\nbunx qwykz@latest --framework rust --auth clerk # Fails before write",
     },
   },
   {
@@ -232,7 +232,9 @@ Every project scaffolded by Qwykz includes two companion context documents:
 - \`--experimental\`: Allow experimental combinations from the capability matrix.
 - \`--no-ai-context\`: Suppress generating \`AGENTS.md\`.
 - \`--record-prompts\`: Save prompt answers to \`.qwykz-manifest.json\`.
-- \`--verbose\`: Live-stream background shell command outputs.`,
+- \`--verbose\`: Live-stream background shell command outputs.
+- \`--version\` / \`-v\`: Print current qwykz version and exit.
+- \`--help\` / \`-h\`: Print command options and usage guide and exit.`,
     codeSnippet: {
       language: "bash",
       caption: "Scripting example with verified flags",

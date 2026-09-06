@@ -91,8 +91,7 @@ export const PRESETS_DATA: PresetDefinition[] = [
     cacheTarget: "docker",
     authTarget: "local",
     extraPackages: [],
-    experimental: true,
-    notes: "Includes split database configuration for Docker environments.",
+    notes: "PHP 8.2+ with Sanctum token auth, Docker PostgreSQL, and Predis Redis caching.",
   },
 
   // Fullstack Monorepos
