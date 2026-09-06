@@ -51,6 +51,31 @@ Instead of generic boilerplate filled with placeholder comments, Qwykz generates
     },
   },
   {
+    id: "ai-pair-programming",
+    title: "Pair Programming with AI",
+    category: "guide",
+    summary: "How Qwykz eliminates AI hallucinations, saves token quota, and turns Claude Code or Cursor into true mentors.",
+    content: `Coding with an AI assistant should feel like pair-programming with a smart senior engineer, not babysitting an assistant who keeps guessing your server ports and database configurations.
+
+### The Real Problem With AI on Blank Projects
+When you open an empty folder in Claude Code, Cursor, or Copilot and ask it to build an API from scratch:
+1. **It guesses architecture**: It creates a database connection per request instead of pooling connections.
+2. **It invents conflicting ports**: It runs your frontend and backend on port 3000, causing port clashes.
+3. **It burns your token quota**: The AI spends 15+ tool calls exploring folders just to figure out what stack you're using.
+4. **It spoon-feeds code**: If you're trying to learn, it dumps 500 lines of completed code, robbing you of intuition.
+
+### How Qwykz Solves This
+Qwykz lays down the architectural ground truth *first*:
+- **Pre-Configured Docker & Connection Pools**: Database containers, health checks, and connection pools are already running.
+- **AGENTS.md Context Pack**: The AI reads this file on its very first turn. It immediately knows the exact backend port (e.g. 8080 for Rust, 3000 for Go), the exact test command, and where routes live.
+- **Mentorship in \`--learn\` Mode**: In hands-on mode, \`AGENTS.md\` explicitly instructs the AI: *"The developer is in learning mode. Do not write full code for them. Ask guiding questions, explain concepts, and help them through the milestones."*`,
+    codeSnippet: {
+      language: "bash",
+      caption: "Scaffold with Qwykz and launch your AI immediately",
+      code: "# 1. Scaffold your stack in 10 seconds\nbunx qwykz@latest --preset api-rust --name payments\n\n# 2. Start services\ncd payments && docker compose up -d\n\n# 3. Open your AI tool — it reads AGENTS.md immediately\nclaude\n# or open in Cursor / VS Code",
+    },
+  },
+  {
     id: "learn-mode",
     title: "Hands-On Learn Mode (--learn)",
     category: "guide",
