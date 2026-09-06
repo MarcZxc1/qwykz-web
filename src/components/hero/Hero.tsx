@@ -25,7 +25,7 @@ export function Hero({ onScrollTo }: HeroProps) {
             </h1>
 
             <p className="text-lg text-zinc-400 max-w-2xl leading-relaxed">
-              Qwykz scaffolds production-ready backends, frontends, and fullstack monorepos in 10 seconds. Every project is planned in-memory, verified against honest capability matrices, and pre-packaged with an <span className="text-emerald-400 font-mono text-sm">AGENTS.md</span> guide so Claude Code, Cursor, and Copilot never guess your ports or burn your token budget.
+              Qwykz scaffolds production-ready backends, frontends, and fullstack monorepos in 10 seconds. Every project is planned in-memory, verified against honest capability matrices, and pre-packaged with an <span className="text-emerald-400 font-mono text-sm">AGENTS.md</span> guide so Claude Code, Cursor, Codex, and Copilot never guess your ports or burn your token budget.
             </p>
 
             {/* Quick Actions */}

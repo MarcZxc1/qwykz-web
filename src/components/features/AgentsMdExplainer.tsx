@@ -50,7 +50,7 @@ RULES FOR THE AI ASSISTANT:
             Why AI coding tools work 10x better on Qwykz projects
           </h2>
           <p className="text-sm sm:text-base text-zinc-400 mt-3 leading-relaxed">
-            Most developers use Claude Code, Cursor, or Copilot on a blank directory, only to spend the next hour correcting the AI's guesses: wrong port mappings, mismatched database pools, and hallucinated packages. Here is how Qwykz turns your AI into an accurate partner.
+            Most developers use Claude Code, Cursor, Codex, or Copilot on a blank directory, only to spend the next hour correcting the AI's guesses: wrong port mappings, mismatched database pools, and hallucinated packages. Here is how Qwykz turns your AI into an accurate partner.
           </p>
         </div>
 

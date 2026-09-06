@@ -24,8 +24,8 @@ export const QUICKSTART_STEPS: QuickstartStep[] = [
   {
     step: 4,
     title: "Build with AI or by Hand",
-    command: "claude",
-    explanation: "Qwykz generates an AGENTS.md context pack for AI tools and a LEARN.md / GUIDE.md for developers.",
+    command: "claude # or codex / cursor",
+    explanation: "Qwykz generates an AGENTS.md context pack for AI tools (Claude Code, OpenAI Codex, Cursor) and a LEARN.md / GUIDE.md for developers.",
     tip: "Add '--learn' to generate a milestone-by-milestone hands-on learning workspace.",
   },
 ];
@@ -41,7 +41,7 @@ export const DOC_SECTIONS: DocSection[] = [
 Qwykz takes care of that repetitive setup in seconds.
 
 Instead of generic boilerplate filled with placeholder comments, Qwykz generates production-ready code with type-safe models, database migrations, running Docker services, and companion guides:
-- **AGENTS.md**: Context pack for AI coding assistants (Claude Code, Cursor, Copilot).
+- **AGENTS.md**: Context pack for AI coding assistants (Claude Code, Cursor, OpenAI Codex, Copilot).
 - **LEARN.md**: Architecture and framework methods guide for human developers.
 - **GUIDE.md**: Progressive 6-milestone learning roadmap in \`--learn\` mode.`,
     codeSnippet: {
@@ -52,13 +52,13 @@ Instead of generic boilerplate filled with placeholder comments, Qwykz generates
   },
   {
     id: "ai-pair-programming",
-    title: "Pair Programming with AI",
+    title: "Pair Programming with AI (Claude, Cursor, Codex)",
     category: "guide",
-    summary: "How Qwykz eliminates AI hallucinations, saves token quota, and turns Claude Code or Cursor into true mentors.",
+    summary: "How Qwykz eliminates AI hallucinations, saves token quota, and turns Claude Code, Cursor, or Codex into true mentors.",
     content: `Coding with an AI assistant should feel like pair-programming with a smart senior engineer, not babysitting an assistant who keeps guessing your server ports and database configurations.
 
 ### The Real Problem With AI on Blank Projects
-When you open an empty folder in Claude Code, Cursor, or Copilot and ask it to build an API from scratch:
+When you open an empty folder in Claude Code, Cursor, Codex CLI, or Copilot and ask it to build an API from scratch:
 1. **It guesses architecture**: It creates a database connection per request instead of pooling connections.
 2. **It invents conflicting ports**: It runs your frontend and backend on port 3000, causing port clashes.
 3. **It burns your token quota**: The AI spends 15+ tool calls exploring folders just to figure out what stack you're using.
@@ -72,7 +72,7 @@ Qwykz lays down the architectural ground truth *first*:
     codeSnippet: {
       language: "bash",
       caption: "Scaffold with Qwykz and launch your AI immediately",
-      code: "# 1. Scaffold your stack in 10 seconds\nbunx qwykz@latest --preset api-rust --name payments\n\n# 2. Start services\ncd payments && docker compose up -d\n\n# 3. Open your AI tool — it reads AGENTS.md immediately\nclaude\n# or open in Cursor / VS Code",
+      code: "# 1. Scaffold your stack in 10 seconds\nbunx qwykz@latest --preset api-rust --name payments\n\n# 2. Start services\ncd payments && docker compose up -d\n\n# 3. Open your AI tool — it reads AGENTS.md immediately\nclaude # or codex / cursor",
     },
   },
   {
@@ -183,7 +183,7 @@ Qwykz works differently:
     title: "AI-Native Context (AGENTS.md & LEARN.md)",
     category: "concepts",
     summary: "Factual context packs for AI pair programmers and human developers.",
-    content: `When you open a newly scaffolded project in Claude Code, Cursor, or Copilot, the AI usually spends dozens of tool calls and thousands of tokens scanning your directory tree trying to figure out which port the backend runs on or how to run tests.
+    content: `When you open a newly scaffolded project in Claude Code, Cursor, Codex, or Copilot, the AI usually spends dozens of tool calls and thousands of tokens scanning your directory tree trying to figure out which port the backend runs on or how to run tests.
 
 Every project scaffolded by Qwykz includes two companion context documents:
 
