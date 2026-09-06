@@ -11,28 +11,28 @@ export interface FrameworkMatrix {
 export const CAPABILITY_MATRIX_DATA: Record<string, FrameworkMatrix> = {
   express: {
     dbTargets: { local: "supported", docker: "supported", supabase: "supported", neon: "supported" },
-    authTargets: { local: "supported", supabase: "experimental", clerk: "experimental" },
+    authTargets: { local: "supported", supabase: "supported", clerk: "supported" },
     cachingTargets: { none: "supported", docker: "supported", upstash: "supported" },
     dockerfile: false,
     frontends: ["react", "vue"],
   },
   hono: {
     dbTargets: { local: "supported", docker: "supported", supabase: "supported", neon: "supported" },
-    authTargets: { local: "supported", supabase: "experimental", clerk: "experimental" },
+    authTargets: { local: "supported", supabase: "supported", clerk: "supported" },
     cachingTargets: { none: "supported", docker: "supported", upstash: "supported" },
     dockerfile: false,
     frontends: ["react", "vue"],
   },
   elysia: {
     dbTargets: { local: "supported", docker: "supported", supabase: "supported", neon: "supported" },
-    authTargets: { local: "supported", supabase: "experimental", clerk: "experimental" },
+    authTargets: { local: "supported", supabase: "supported", clerk: "supported" },
     cachingTargets: { none: "supported", docker: "supported", upstash: "supported" },
     dockerfile: false,
     frontends: ["react", "vue"],
   },
   nextjs: {
     dbTargets: { local: "supported", docker: "supported", supabase: "supported", neon: "supported" },
-    authTargets: { local: "supported", supabase: "experimental", clerk: "experimental" },
+    authTargets: { local: "supported", supabase: "supported", clerk: "supported" },
     cachingTargets: { none: "supported", docker: "supported", upstash: "supported" },
     dockerfile: false,
   },
