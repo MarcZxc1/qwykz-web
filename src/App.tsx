@@ -9,6 +9,7 @@ import { ArchitectureShowcase } from "./components/features/ArchitectureShowcase
 import { AgentsMdExplainer } from "./components/features/AgentsMdExplainer";
 import { DocViewer } from "./components/docs/DocViewer";
 import { Footer } from "./components/layout/Footer";
+import { CustomCursor } from "./components/common/CustomCursor";
 import type { PresetDefinition } from "./types/preset";
 import "./App.css";
 
@@ -30,6 +31,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#090a0f] text-zinc-100 selection:bg-emerald-950 selection:text-emerald-300">
+      <CustomCursor />
       <Navbar onNavigate={scrollToSection} />
       <main className="flex-1">
         <Hero onScrollTo={scrollToSection} />
