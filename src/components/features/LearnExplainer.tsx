@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container } from "../layout/Container";
 import { Badge } from "../common/Badge";
 import { CopyButton } from "../common/CopyButton";
+import { QWYKZ_VERSION } from "../../data/version";
 
 export function LearnExplainer() {
   const [activeTab, setActiveTab] = useState<"learn-md" | "guide-md">("learn-md");
@@ -85,7 +86,7 @@ You learn best by building with your own hands.
             <span className="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold block">
               Educational Scaffolding
             </span>
-            <Badge variant="experimental" size="sm">New in v1.4.6</Badge>
+            <Badge variant="experimental" size="sm">New in v{QWYKZ_VERSION}</Badge>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
             Learn By Doing: Complete Boilerplate vs Hands-On Mode

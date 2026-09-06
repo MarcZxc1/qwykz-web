@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container } from "./Container";
 import { CopyButton } from "../common/CopyButton";
 import { QwykzLogo } from "../common/QwykzLogo";
+import { QWYKZ_VERSION } from "../../data/version";
 
 interface NavbarProps {
   activeTab?: string;
@@ -45,7 +46,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
               </div>
             </button>
             <span className="hidden sm:inline-flex items-center px-2 py-0.5 text-xs font-mono bg-zinc-900 text-zinc-400 border border-zinc-800 rounded">
-              v1.4.6
+              v{QWYKZ_VERSION}
             </span>
           </div>
 

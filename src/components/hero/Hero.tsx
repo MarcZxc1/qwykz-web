@@ -1,6 +1,7 @@
 import { Container } from "../layout/Container";
 import { QuickTerminal } from "./QuickTerminal";
 import { Badge } from "../common/Badge";
+import { QWYKZ_VERSION } from "../../data/version";
 
 interface HeroProps {
   onScrollTo: (id: string) => void;
@@ -14,7 +15,7 @@ export function Hero({ onScrollTo }: HeroProps) {
           {/* Left Column: Heading & Value Proposition */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             <div className="flex flex-wrap items-center gap-2">
-              <Badge variant="supported">v1.4.6</Badge>
+              <Badge variant="supported">v{QWYKZ_VERSION}</Badge>
               <Badge variant="cyan">Inspectable Scaffolder</Badge>
               <Badge variant="amber">AI-Ready Context Pack</Badge>
               <Badge variant="default">Bun + React 19</Badge>

@@ -27,6 +27,18 @@ Before documenting or implementing any Qwykz CLI feature, verify against the cor
 | **Preset Definitions** | `../qwykz/src/presets.ts` | Tested preset names (`api-rust`, `api-go`, `fullstack-react-elysia`, etc.) and aliases |
 | **Preset Documentation** | `../qwykz/docs/presets.md` | Official catalog and flag override behavior |
 | **System Guide** | `../qwykz/QWYKZ_PERSONAL_SYSTEM_GUIDE.md` | In-depth architecture breakdown of the staging pipeline and manifest |
+| **Core Agent Rules** | `../qwykz/AGENTS.md` | Architectural invariants, test gates, and design philosophy |
+
+### Upstream Verification & Synchronization Commands
+Never guess what was updated in the core engine. Use the built-in sync scripts:
+
+```bash
+# Check if qwykz-web is drifted from core engine (version, matrix, commits)
+bun run check:upstream
+
+# Automatically pull latest version, capability matrix, and commit state
+bun run sync:upstream
+```
 
 ---
 
@@ -46,20 +58,20 @@ Before documenting or implementing any Qwykz CLI feature, verify against the cor
 When building, modifying, or refactoring the website, follow the verification cycle before concluding any task:
 
 ```
-[Plan] ──> [Act / Implement] ──> [Test Triad] ──> [Review / Audit] ──> [Iterate / Ship]
+[Sync Check] ──> [Plan] ──> [Act / Implement] ──> [Verification Triad] ──> [Review / Ship]
 ```
 
 ### The Verification Triad
 Every code change must pass this triad cleanly:
 
 ```bash
-# 1. Linting (oxlint)
+# 1. Upstream drift check
+bun run check:upstream
+
+# 2. Linting (oxlint)
 bun run lint
 
-# 2. TypeScript compilation
-bunx tsc -b
-
-# 3. Production bundle build
+# 3. TypeScript compilation & Production build
 bun run build
 ```
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CopyButton } from "../common/CopyButton";
+import { QWYKZ_VERSION } from "../../data/version";
 
 export function QuickTerminal() {
   const [activeTab, setActiveTab] = useState<"bun" | "npm" | "preset">("bun");
@@ -11,7 +12,7 @@ export function QuickTerminal() {
   };
 
   const outputs = {
-    bun: `⚡ qwykz v1.4.6 — Quick & Ready Boilerplate Builder
+    bun: `⚡ qwykz v${QWYKZ_VERSION} — Quick & Ready Boilerplate Builder
 ? What is your project name? › billing-service
 ? Select target framework › Rust (Axum)
 ? Select database › Docker PostgreSQL
@@ -22,7 +23,7 @@ export function QuickTerminal() {
 ✔ Staging workspace verified in memory
 ✔ AGENTS.md generated for AI coding tools
 ✨ Done in 1.4s. Run: cd billing-service && docker compose up -d`,
-    npm: `⚡ qwykz v1.4.6 — Quick & Ready Boilerplate Builder
+    npm: `⚡ qwykz v${QWYKZ_VERSION} — Quick & Ready Boilerplate Builder
 ? What is your project name? › api-server
 ? Select target framework › Go (Fiber)
 ? Select database › Docker PostgreSQL
@@ -30,7 +31,7 @@ export function QuickTerminal() {
 ✔ Plan verified [22 files planned]
 ✔ Isolated staging committed cleanly
 ✨ Created ./api-server with Docker Compose & tests.`,
-    preset: `⚡ qwykz v1.4.6 — Preset: fullstack-react-rust
+    preset: `⚡ qwykz v${QWYKZ_VERSION} — Preset: fullstack-react-rust
 ✔ Frontend: React 19 + Vite (port 5173)
 ✔ Backend: Rust Axum (port 8080)
 ✔ Universal API alignment: VITE_API_URL -> http://localhost:8080
