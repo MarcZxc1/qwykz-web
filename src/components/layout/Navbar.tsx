@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container } from "./Container";
 import { CopyButton } from "../common/CopyButton";
+import { QwykzLogo } from "../common/QwykzLogo";
 
 interface NavbarProps {
   activeTab?: string;
@@ -31,11 +32,12 @@ export function Navbar({ onNavigate }: NavbarProps) {
             <button
               type="button"
               onClick={() => handleNavClick("hero")}
-              className="flex items-center gap-2 group cursor-pointer text-left"
+              className="flex items-center gap-2.5 group cursor-pointer text-left"
             >
-              <div className="w-8 h-8 rounded bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-mono font-bold text-lg group-hover:border-emerald-400 transition-colors">
-                ⚡
-              </div>
+              <QwykzLogo
+                size={32}
+                className="group-hover:scale-105 transition-transform duration-200 drop-shadow-[0_0_8px_rgba(16,185,129,0.3)]"
+              />
               <div className="flex flex-col">
                 <span className="font-mono font-bold text-lg text-zinc-100 tracking-tight">
                   qwykz

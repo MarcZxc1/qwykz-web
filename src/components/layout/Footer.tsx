@@ -1,4 +1,5 @@
 import { Container } from "./Container";
+import { QwykzLogo } from "../common/QwykzLogo";
 
 export function Footer() {
   return (
@@ -6,8 +7,9 @@ export function Footer() {
       <Container>
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-            <div className="flex items-center gap-2">
-              <span className="text-emerald-400 font-mono font-bold">⚡ qwykz</span>
+            <div className="flex items-center gap-2.5">
+              <QwykzLogo size={22} />
+              <span className="text-zinc-200 font-mono font-bold tracking-tight">qwykz</span>
               <span className="text-zinc-600">·</span>
               <span className="text-zinc-400">Inspectable multi-stack project scaffolder</span>
             </div>
