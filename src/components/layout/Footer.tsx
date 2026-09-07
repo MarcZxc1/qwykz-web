@@ -1,5 +1,6 @@
 import { Container } from "./Container";
 import { QwykzLogo } from "../common/QwykzLogo";
+import { VisitorCounter } from "../common/VisitorCounter";
 
 export function Footer() {
   return (
@@ -15,7 +16,8 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 font-mono text-xs">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-mono text-xs">
+            <VisitorCounter />
             <a
               href="https://bun.sh"
               target="_blank"
